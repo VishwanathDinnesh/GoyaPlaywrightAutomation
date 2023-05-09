@@ -11,7 +11,7 @@ test.describe('test', () => {
 
     });
     
-    test('Login Logout', async () => {
+    test('Login Logout1', async () => {
 
         await page.goto('https://portal-test.goya.com/oms2/#/home')
         //Add assertions to check element
