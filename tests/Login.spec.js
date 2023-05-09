@@ -29,6 +29,7 @@ test.describe('test', () => {
         //Add assertion to verify that after logout we are getting back to the login screen.
         await expect(page).toHaveURL('https://portal-test.goya.com/oms2/#/login');
         //await page.close();
+        //upload GIT
 
     })
 })
