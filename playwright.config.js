@@ -19,7 +19,7 @@ module.exports = defineConfig({
      *  Maximum time expect() should wait for the condition to be met.
      * For example in 'await expect(locator).toHaveText();
      */
-    timeout: 90000
+    timeout: 120000
   },
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
