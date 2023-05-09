@@ -1,5 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+const { allure } = require('allure-playwright');
 
 /**
  * Read environment variables from file.
