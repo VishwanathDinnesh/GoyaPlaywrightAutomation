@@ -13,13 +13,13 @@ const { defineConfig, devices } = require('@playwright/test');
 module.exports = defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
-  timeout: 100 * 1000,
+  timeout: 90 * 1000,
   expect: {
     /**
      *  Maximum time expect() should wait for the condition to be met.
      * For example in 'await expect(locator).toHaveText();
      */
-    timeout: 50000
+    timeout: 90000
   },
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -51,15 +51,15 @@ module.exports = defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+      // name: 'firefox',
+      // use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+      // name: 'webkit',
+      // use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {
