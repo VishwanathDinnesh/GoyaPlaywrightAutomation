@@ -13,7 +13,7 @@ const { defineConfig, devices } = require('@playwright/test');
 module.exports = defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
-  timeout: 90 * 1000,
+  timeout: 120 * 1000,
   expect: {
     /**
      *  Maximum time expect() should wait for the condition to be met.

@@ -108,7 +108,7 @@ test.describe('test', () => {
         await page.getByRole('link', { name: 'Logout' }).click();
         //Add assertion to verify that after logout we are getting back to the login screen.
         await expect(page).toHaveURL('https://portal-test.goya.com/oms2/#/login');
-        await page.close();
+        // await page.close();
 
 
     // })
