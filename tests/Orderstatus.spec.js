@@ -27,7 +27,7 @@ test('Order Status', async ({ page }) => {
 
     await expect(page.getByRole('button', { name: 'Order Status', exact: true })).toBeEnabled();
     await page.getByRole('button', { name: 'Order Status' }).click();
-    await page.getByRole('cell', { name: '356302451 (W)' }).click();
+    await page.getByRole('cell', { name: '356302456 (W)' }).click();
     const downloadPromise = page.waitForEvent('download');
     await page.locator('#pdf').getByText('PDF').click();
     const download = await downloadPromise;
