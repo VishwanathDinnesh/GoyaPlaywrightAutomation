@@ -27,21 +27,42 @@ test('Order Status', async ({ page }) => {
 
     await expect(page.getByRole('button', { name: 'Order Status', exact: true })).toBeEnabled();
     await page.getByRole('button', { name: 'Order Status' }).click();
-    await page.getByRole('cell', { name: '356302456 (W)' }).click();
+    await page.getByRole('textbox', { name: 'Customer Order # Status From Date To Date Order Type Sources EOR' }).click();
+    await page.getByRole('textbox', { name: 'Customer Order # Status From Date To Date Order Type Sources EOR' }).fill('356302460');
+    await page.getByRole('textbox', { name: 'Customer Order # Status From Date To Date Order Type Sources EOR' }).press('Enter');
+    await page.getByRole('cell', { name: '356302460 (W)' }).click();
+    await page.waitForTimeout(1000)
+    await page.screenshot({ path: "OrderDetails.png", fullPage: true })
     const downloadPromise = page.waitForEvent('download');
     await page.locator('#pdf').getByText('PDF').click();
     const download = await downloadPromise;
     page.once('dialog', dialog => {
     console.log(`Dialog message: ${dialog.message()}`);
     dialog.dismiss().catch(() => {});
-  });
-  await page.locator('#pdf').getByText('Email').click();
-  await page.locator('#pdf').getByText('Close').click();
-  
-  await page.getByRole('listitem').filter({ hasText: 'Home' }).getByRole('link', { name: 'Home' }).click();
-  await page.getByRole('button', { name: '013506-CARLOS MORATO' }).click();
-  await page.getByRole('link', { name: 'Logout' }).click();
-  await page.goto('https://portal-test.goya.com/oms2/#/login');
+    });
+
+    await page.locator('#pdf').getByText('Email').click();
+    
+    page.once('dialog', dialog => {
+    console.log(`Dialog message: ${dialog.message()}`);
+    dialog.dismiss().catch(() => { });
+    })
+    await page.waitForTimeout(5000)
+    // await page.screenshot({ path: "EmailSent.png", fullPage: true })
+        
+    await page.locator('#pdf').getByText('Close').click();
+    await page.locator('#idd').press('ScrollLock');
+    await page.locator('.table > tbody > tr > td:nth-child(3)').first().click();
+    await page.waitForTimeout(1000)
+    await page.screenshot({ path: "PopUp.png", fullPage: true})
+    await page.getByRole('button', { name: 'Close' }).press('ScrollLock');
+    await page.getByRole('button', { name: 'Close' }).click();
+    
+    
+    await page.getByRole('listitem').filter({ hasText: 'Home' }).getByRole('link', { name: 'Home' }).click();
+    await page.getByRole('button', { name: '013506-CARLOS MORATO' }).click();
+    await page.getByRole('link', { name: 'Logout' }).click();
+    await page.goto('https://portal-test.goya.com/oms2/#/login');
 });
 })
 
