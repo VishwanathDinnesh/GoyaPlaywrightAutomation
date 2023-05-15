@@ -5,3 +5,5 @@ playwright/.cache/
 test-results/
 playwright-report/
 playwright/.cache/
+allure-results/
+allure-report
