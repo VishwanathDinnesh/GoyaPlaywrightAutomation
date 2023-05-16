@@ -31,7 +31,7 @@ test('Order Status', async ({ page }) => {
     await page.getByRole('button', { name: 'Status focus' }).press('ScrollLock');
     await page.getByRole('option', { name: 'Open', exact: true }).getByText('Open').click();
     await page.waitForTimeout(10000)
-    await page.getByRole('cell', { name: '356302741 (W)' }).click();
+    await page.getByRole('cell', { name: '356302766 (W)' }).click();
     await page.screenshot({ path: "Pdf.png", fullPage: true })
     const downloadPromise = page.waitForEvent('download');
     await page.locator('#pdf').getByText('PDF').click();
