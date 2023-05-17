@@ -41,7 +41,7 @@ test.describe('test', () => {
 
         await expect(page.getByRole('button', { name: 'Order', exact: true })).toBeEnabled();
         await page.getByRole('button', { name: 'Order', exact: true }).click();
-        //Add assertions to verify the URL of the Order-Entry page.
+        //Addd assertions to verify the URL of the Order-Entry page.
         await expect(page).toHaveURL('https://portal-test.goya.com/oms2/#/order-entry');
         await page.locator('#pickUp').check();
         await page.screenshot({ path: "pinkscreen.png", fullPage: true })
@@ -55,7 +55,7 @@ test.describe('test', () => {
             await page.getByRole('textbox', { name: 'Item / UPC#' }).fill(index.item);
             await page.getByPlaceholder('Cases').fill('6');
             await page.getByRole('button', { name: 'Add' }).click();
-            await page.waitForTimeout(1000);
+            await page.waitForTimeout(1100);
         }
         await page.waitForTimeout(2000);
         await page.screenshot({ path: "EOR.png", fullPage: true })
