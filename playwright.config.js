@@ -89,7 +89,7 @@ module.exports = defineConfig({
     // },
   ],
 
-  retries: 1,
+  retries: 2,
   
 
 
