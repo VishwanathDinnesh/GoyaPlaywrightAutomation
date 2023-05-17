@@ -26,7 +26,7 @@ test('Order Status', async ({ page }) => {
     await expect(page).toHaveURL('https://portal-test.goya.com/oms2/#/home');
 
     await page.getByRole('button', { name: 'Order Status' }).click();
-    await page.waitForTimeout(10000)
+    await page.waitForTimeout(11000)
     await page.getByRole('searchbox', { name: 'Status' }).click();
     await page.getByRole('button', { name: 'Status focus' }).press('ScrollLock');
     await page.getByRole('option', { name: 'Open', exact: true }).getByText('Open').click();
