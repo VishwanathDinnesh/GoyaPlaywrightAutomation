@@ -61,7 +61,7 @@ test.describe('test', () => {
         await page.screenshot({ path: "EOR.png", fullPage: true })
 
 
-        //Add assertions to verify the Submit button
+        //Add asssertions to verify the Submit button
         await expect(page.getByRole('button', { name: 'Submit', exact: true })).toBeEnabled();
         await page.getByRole('button', { name: 'Submit' }).click();
         
