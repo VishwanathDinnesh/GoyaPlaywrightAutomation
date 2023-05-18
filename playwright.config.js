@@ -27,22 +27,24 @@ module.exports = defineConfig({
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   //retries: process.env.CI ? 2 : 0,
-  // retries: 1,
+  retries: 1,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html'],['line'],['allure-playwright']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    video: 'on',
-    launchOptions:{
-      slowMo: 1000
-    },
+
+    headless: false,
+    browserName:'chromium',
+    screenshot: "on",
+    trace: "retain-on-failure"
+    
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    // trace: 'on-first-retry',
   },
 
   /* Configure projects for major browsers */
@@ -52,7 +54,11 @@ module.exports = defineConfig({
       name: 'chromium',
       use: { 
         ...devices['Desktop Chrome'],
-        viewport:{width:1366,height:800}
+        viewport:{width:1366,height:800},
+        video: 'on',
+        launchOptions:{
+          slowMo: 1000
+        }, 
                
       },
       
@@ -88,8 +94,6 @@ module.exports = defineConfig({
     //   use: { ..devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],
-
-  retries: 2,
   
 
 
