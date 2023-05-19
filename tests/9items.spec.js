@@ -57,7 +57,7 @@ test.describe('test', () => {
             await page.getByRole('button', { name: 'Add' }).click();
             await page.waitForTimeout(1100);
         }
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(2001);
         await page.screenshot({ path: "EOR.png", fullPage: true })
 
 

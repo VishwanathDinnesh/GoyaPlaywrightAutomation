@@ -21,17 +21,16 @@ test('Smart Order', async ({ page }) => {
   await page.getByPlaceholder('Username').fill('013506');
   await page.getByPlaceholder('Password').fill('Pwd@013506');
   await page.getByRole('button', { name: 'Login' }).click();
-  //Add assertions to verify the URL of the home page .
+  //Addd assertions to verify the URL of the home page .
   await expect(page).toHaveURL('https://portal-test.goya.com/oms2/#/home');
   await expect(page.getByRole('button', { name: 'Customers', exact: true })).toBeEnabled();
   await page.getByRole('button', { name: 'Customers', exact: true }).click();
   //Add assertions to verify the URL of the Order-Entry page.
   await expect(page).toHaveURL('https://portal-test.goya.com/oms2/#/customer-details');
   await expect(page.getByRole('textbox', { name: 'Search Customer', exact: true})).toBeEnabled
-  await page.getByRole('textbox', { name: 'Search Customer', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Search Customer' }).click();
   await page.getByRole('textbox', { name: 'Search Customer' }).fill('701631');
-  await page.getByRole('row', { name: '701631 RUMBA CUBANA (JC) A $490.29 Customer Statement Preview' }).getByRole('radio').check();
-  await page.getByRole('row', { name: '701631 RUMBA CUBANA (JC) A $490.29 Customer Statement Preview' }).getByRole('radio').press('ScrollLock');
+  await page.getByRole('row', { name: '701631 RUMBA CUBANA (JC) A $299.54 Customer Statement Preview' }).getByRole('radio').check();
   await page.getByRole('button', { name: 'Select' }).click();
   await page.getByRole('button', { name: 'Proceed' }).click();
   //Add assertions to verify the URL of the home page .

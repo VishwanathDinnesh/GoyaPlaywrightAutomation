@@ -46,7 +46,7 @@ test('Order Status', async ({ page }) => {
     await page.screenshot({ path: "Cancel.png", fullPage: true })
     await page.getByRole('button', { name: 'No' }).click();
     await page.locator('.table > tbody > tr > td:nth-child(3)').first().click();
-    await page.waitForTimeout(1000)
+    await page.waitForTimeout(1100)
     await page.screenshot({ path: "Popup.png", fullPage: true })
     await page.getByRole('button', { name: 'Close' }).click();
     await page.waitForTimeout(5000)

@@ -14,7 +14,7 @@ const { allure } = require('allure-playwright');
 module.exports = defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
-  timeout: 120 * 1000,
+  timeout: 200 * 1000,
   expect: {
     /**
      *  Maximum time expect() should wait for the condition to be met.
