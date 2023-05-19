@@ -26,7 +26,7 @@ test.describe('test', () => {
         await expect(page).toHaveURL('https://portal-test.goya.com/oms2/#/home');
         await page.getByRole('button', { name: '013506-CARLOS MORATO' }).click();
         await page.getByRole('link', { name: 'Logout' }).click();
-        //Addd assertion to verify that after logout we are getting back to the login screen.
+        //Addd asssertion to verify that after logout we are getting back to the login screen.
         await expect(page).toHaveURL('https://portal-test.goya.com/oms2/#/login');
         //await page.close();
         //upload GIT
