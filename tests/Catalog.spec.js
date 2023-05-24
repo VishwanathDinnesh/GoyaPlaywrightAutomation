@@ -9,7 +9,7 @@ test.describe('test', () => {
 
     });
 
-test('Catalog', async ({ page }) => {
+test('Creating Order from Catalog Page', async ({ page }) => {
     await page.goto('https://portal-test.goya.com/oms2/#/home');
     //Add assertions to check element
     await expect(page.getByPlaceholder('Username')).toHaveCount(1);

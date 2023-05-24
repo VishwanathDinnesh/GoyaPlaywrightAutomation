@@ -11,7 +11,7 @@ test.describe('test', () => {
 
     });
     
-    test('Login into the GOYA OMS', async () => {
+    test('Create Order', async () => {
 
         await page.goto('https://portal-test.goya.com/oms2/#/home')
         //Add assertions to check element
