@@ -33,7 +33,7 @@ test('Creating Order from Smart Order Page', async ({ page }) => {
   await page.getByRole('row', { name: '701631 RUMBA CUBANA (JC) A $299.54 Customer Statement Preview' }).getByRole('radio').check();
   await page.getByRole('button', { name: 'Select' }).click();
   await page.getByRole('button', { name: 'Proceed' }).click();
-  //Add assertions to verify the URL of the home page .
+  //Addd assertions to verify the URL of the home page .
   await expect(page).toHaveURL('https://portal-test.goya.com/oms2/#/home');
   await expect(page.getByRole('button', {name: 'Smart Order', exact: true})).toBeEnabled
   await page.getByRole('button', { name: 'Smart Order' }).click();
